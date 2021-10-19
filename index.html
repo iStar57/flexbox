@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>STAR</title>
+
+<body>
+<div class="navbar">
+  <a href="rolled.mp4"><i class="fa fa-fw fa-twitter"></i> Twitter</a> 
+  <a href="rolled.mp4"><i class="fa fa-fw fa-eye"></i> Scout me</a> 
+  <a href="rolled.mp4"><i class="fa fa-user-circle-o"></i> Contact</a> 
+</div>
+  <div id="star"><script type="text/javascript">(function() {
+    // Add event listener
+    document.addEventListener("mousemove", parallax);
+    const elem = document.querySelector("#star");
+    // Magic happens here
+    function parallax(e) {
+        let _w = window.innerWidth/2;
+        let _h = window.innerHeight/2;
+        let _mouseX = e.clientX;
+        let _mouseY = e.clientY;
+        let _depth1 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.001}%`;
+        let _depth2 = `${50 - (_mouseX - _w) * 0.002}% ${50 - (_mouseY - _h) * 0.002}%`;
+        let _depth3 = `${50 - (_mouseX - _w) * 0.002}% ${50 - (_mouseY - _h) * 0.002}%`;
+        let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+        console.log(x);
+        elem.style.backgroundPosition = x;
+    }
+
+})();</script>
+</div>
+
+<div class="content">
+  <video autoplay muted loop id="myVideo">
+  <source src="clip.mp4" loop autoplay>
+  Your browser does not support HTML5 video.
+</video>
+
+<script>
+var video = document.getElementById("myVideo");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+<img src="separadorlogo.png">
+</div>
+<div class="footer">
+
+  
+</div>
+
+</body>
+</html> 
